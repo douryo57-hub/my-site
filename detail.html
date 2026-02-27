@@ -14,7 +14,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ナビゲーションを画像に重ねて空間を節約 */
+        /* 空間の節約：ナビゲーションを画像に重ねる */
         .nav-back {
             position: absolute;
             top: 25px;
@@ -39,17 +39,17 @@
 
         .container { max-width: 800px; margin: 0 auto; padding: 0 0 100px; }
 
-        /* 画像の高さを45vh（画面の4.5割）に抑えて間延びを解消 */
+        /* メイン画像：高さを抑えて間延びを解消 */
         .product-visual {
             width: 100%;
             height: 45vh;
-            background: url('top-image.jpg') no-repeat center center/cover;
+            background: url('hero-image.jpg') no-repeat center center/cover;
             margin-bottom: 40px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.8);
             position: relative;
         }
 
-        /* タイトルの配置を上に引き上げる */
+        /* 製品タイトル */
         h2 { 
             font-size: clamp(24px, 4vw, 32px);
             color: #d4af37; 
@@ -68,10 +68,9 @@
             padding-bottom: 12px; 
             margin-bottom: 30px; 
             letter-spacing: 0.2em;
-            font-weight: normal;
         }
         
-        /* 途中に差し込む画像ボックス */
+        /* 途中に差し込む画像ボックス（2枚目用） */
         .detail-image-box {
             width: 100%;
             margin: 50px 0;
@@ -79,3 +78,111 @@
         }
         .detail-image-box img {
             width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        .img-caption {
+            font-size: 11px;
+            color: #666;
+            margin-top: 15px;
+            letter-spacing: 0.1em;
+        }
+
+        .content-text { font-size: 15px; font-weight: 300; letter-spacing: 0.05em; color: #ccc; margin-bottom: 25px; }
+
+        /* スペック表 */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; border-top: 1px solid #222; }
+        th, td { border-bottom: 1px solid #222; padding: 18px 10px; text-align: left; font-size: 13px; }
+        th { color: #d4af37; width: 35%; font-weight: normal; letter-spacing: 0.1em; }
+
+        /* 予約エリア：120g / 8,500円に修正済み */
+        .reservation-area {
+            background: #080808;
+            padding: 80px 30px;
+            text-align: center;
+            border: 1px solid #222;
+            margin: 100px 20px 0;
+        }
+        .limit-text { color: #d4af37; font-size: 15px; margin-bottom: 15px; font-weight: bold; letter-spacing: 0.3em; }
+        .price { font-size: 32px; color: #fff; margin-bottom: 40px; letter-spacing: 0.05em; }
+        
+        .cta-button {
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            padding: 24px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 0.3em;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .cta-button:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        footer { padding: 80px 20px; text-align: center; border-top: 1px solid #111; margin-top: 60px; }
+        .footer-copy { font-size: 10px; color: #444; letter-spacing: 0.1em; }
+
+        @media (max-width: 768px) {
+            .product-visual { height: 40vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-back"><a href="index.html">← TOP</a></nav>
+
+    <div class="container">
+        <div class="product-visual"></div>
+
+        <h2>CUVÉE WAGYU NOIR</h2>
+
+        <section class="section">
+            <h3 class="section-title">CONCEPT</h3>
+            <p class="content-text">
+                愛犬に、私たちと同じ、あるいはそれ以上の喜びを。<br>
+                選び抜かれたA5ランクの和牛と、天然の燕の巣。
+            </p>
+            
+            <div class="detail-image-box">
+                <img src="detail-image-1.jpg" alt="素材のこだわり">
+                <p class="img-caption">厳選素材が生み出す、贅を尽くした一皿。</p>
+            </div>
+            
+            <p class="content-text">
+                二つの至宝を一つの瓶に封じ込めた「Maison de l'Éclat」の自信作。<br>
+                素材本来の香りと栄養を逃さない独自の製法で仕上げました。
+            </p>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">PRODUCT DETAILS</h3>
+            <table>
+                <tr><th>製品名</th><td>CUVÉE WAGYU NOIR</td></tr>
+                <tr><th>主原材料</th><td>A5ランク和牛、天然燕の巣、和牛ボーンブロス</td></tr>
+                <tr><th>内容量</th><td>120g / 1瓶</td></tr> <tr><th>賞味期限</th><td>製造より12ヶ月（未開封時）</td></tr>
+                <tr><th>原産国</th><td>日本</td></tr>
+            </table>
+        </section>
+
+        <div class="reservation-area">
+            <p class="limit-text">限定 30 個・事前予約</p>
+            <p class="price">¥8,500 <span style="font-size: 14px;">(tax incl.)</span></p> <a href="YOUR_STRIPE_URL" class="cta-button">予約を確定する</a>
+            
+            <p style="font-size: 11px; color: #555; margin-top: 30px; line-height: 1.8;">
+                ※4月30日までは「枠の確保」のみを行い、5月1日に決済が確定いたします。<br>
+                ※30個に達した時点で受付終了となります。
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-copy">&copy; 2026 Maison de l'Éclat.</p>
+    </footer>
+
+</body>
+</html>
