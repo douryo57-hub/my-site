@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'ÉCLAT | 至高のドッグ・ガストロノミー</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --bordeaux: #4a0e0e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, .en { font-family: 'Playfair Display', serif; font-weight: 400; letter-spacing: 0.1em; }
+
+        /* Navigation */
+        nav {
+            padding: 30px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+        }
+        .logo { font-size: 1.8rem; color: var(--gold); text-decoration: none; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('top-image.jpg') center/cover;
+            /* ↑ここを例の「金色蓋の瓶」の画像に差し替えます */
+        }
+
+        .hero-content h1 { font-size: 4rem; margin-bottom: 20px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1.5s forwards; }
+        .hero-content p { font-size: 1.1rem; letter-spacing: 0.2em; opacity: 0; animation: fadeInUp 1.5s 0.5s forwards; }
+
+        /* Concept Section */
+        .section { padding: 120px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
+        .section h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--gold); }
+        .section p { margin-bottom: 30px; font-weight: 300; }
+
+        /* Product Highlight */
+        .product-box {
+            border: 1px solid #333;
+            padding: 60px;
+            margin-top: 60px;
+            position: relative;
+        }
+        .badge {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bordeaux);
+            padding: 5px 25px;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Button */
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 50px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.5s;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+        .cta-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer { padding: 60px; text-align: center; font-size: 0.7rem; color: #666; letter-spacing: 0.1em; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">L'ÉCLAT</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>L'ÉCLAT</h1>
+            <p>A5和牛と燕の巣。金色の一瓶に、永遠の愛を込めて。</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="en">The Philosophy</h2>
+        <p>代官山のアトリエで一つひとつ丁寧に紡がれる、至高のドッグ・ガストロノミー。</p>
+        <p>厳選された黒毛和牛の深みと、燕の巣がもたらす輝き。<br>
+        それは、家族という絆に相応しい、唯一無二の贈り物です。</p>
+
+        <div class="product-box">
+            <div class="badge">MAY PRE-OPEN</div>
+            <h3>Cuvée Wagyu & Nid d'Hirondelle</h3>
+            <p style="margin-top:20px; color:var(--gold);">限定 30瓶</p>
+            <p>¥8,500 (tax incl.)</p>
+            <a href="#" class="cta-btn">WAITLIST 登録</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 L'ÉCLAT DAIKANYAMA. ALL RIGHTS RESERVED.
+    </footer>
+
+</body>
+</html>
