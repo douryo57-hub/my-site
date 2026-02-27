@@ -20,7 +20,6 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            /* 画像パスはご自身の環境に合わせて変更してください */
             background: url('hero-image.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -30,17 +29,14 @@
             text-align: center;
         }
 
-        /* 視認性を高めるための強力なオーバーレイ */
+        /* 視認性を高めるオーバーレイ */
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 75%;
+            top: 0; left: 0; width: 100%; height: 80%;
             background: linear-gradient(to bottom, 
-                rgba(0,0,0,0.9) 0%, 
-                rgba(0,0,0,0.5) 50%, 
+                rgba(0,0,0,0.95) 0%, 
+                rgba(0,0,0,0.6) 40%, 
                 rgba(0,0,0,0) 100%);
             z-index: 1;
         }
@@ -51,130 +47,127 @@
             padding: 0 20px;
         }
 
-        /* ブランド名（フランス語） */
         .title {
-            font-size: clamp(32px, 5vw, 42px);
+            font-size: clamp(34px, 6vw, 48px);
             letter-spacing: 0.3em;
-            color: #d4af37; /* ゴールド */
+            color: #d4af37;
             margin-bottom: 15px;
             font-weight: normal;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 20px rgba(0,0,0,0.7);
         }
 
-        /* 英文キャッチコピー */
         .english-text {
-            font-size: clamp(14px, 2vw, 17px);
+            font-size: clamp(14px, 2vw, 18px);
             letter-spacing: 0.1em;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             font-style: italic;
             opacity: 0.9;
             line-height: 1.8;
         }
 
-        /* ブランド名（カタカナ） */
         .brand-reading {
-            font-size: 13px;
+            font-size: 14px;
             letter-spacing: 0.4em;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             color: rgba(255,255,255,0.7);
-            font-weight: 300;
         }
 
-        /* 日本語キャッチコピー */
         .japanese-text {
-            font-size: clamp(15px, 2.5vw, 19px);
+            font-size: clamp(16px, 2.5vw, 20px);
             letter-spacing: 0.2em;
             font-weight: 300;
-            line-height: 2.4;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            line-height: 2.6;
         }
 
-        /* 導入セクション */
+        /* 導入・詳細誘導セクション */
         .intro-section {
             background: #0a0a0a;
-            padding: 120px 20px;
+            padding: 140px 20px;
             text-align: center;
             border-top: 1px solid #222;
         }
 
         .intro-container {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
+        /* 【修正ポイント】限定バッジを巨大化・強調 */
         .limit-badge {
             display: inline-block;
-            border: 1px solid #d4af37;
+            border: 2px solid #d4af37;
             color: #d4af37;
-            padding: 6px 24px;
-            font-size: 12px;
-            letter-spacing: 0.2em;
-            margin-bottom: 40px;
+            padding: 15px 50px; /* 余白を大幅に強化 */
+            font-size: 24px;    /* 文字サイズを大幅アップ */
+            letter-spacing: 0.4em;
+            margin-bottom: 50px;
+            font-weight: bold;
+            background: linear-gradient(45deg, rgba(212,175,55,0.1), rgba(0,0,0,0));
+            box-shadow: 0 0 20px rgba(212,175,55,0.2);
+            position: relative;
         }
 
         .intro-title {
-            font-size: 24px;
-            letter-spacing: 0.2em;
+            font-size: 28px;
+            letter-spacing: 0.25em;
             margin-bottom: 30px;
             font-weight: normal;
+            color: #fff;
+        }
+
+        .intro-desc {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 50px;
+            line-height: 2.2;
+            letter-spacing: 0.05em;
         }
 
         /* 詳細ページへのボタン */
         .detail-button {
             display: inline-block;
             width: 100%;
-            max-width: 380px;
-            padding: 22px;
+            max-width: 420px;
+            padding: 24px;
+            background: transparent;
             border: 1px solid #d4af37;
             color: #d4af37;
             text-decoration: none;
             font-weight: bold;
             letter-spacing: 0.3em;
-            font-size: 14px;
-            transition: all 0.4s ease;
-            margin-top: 20px;
+            font-size: 15px;
+            transition: all 0.5s ease;
         }
 
         .detail-button:hover {
             background: #d4af37;
             color: #000;
+            box-shadow: 0 0 30px rgba(212,175,55,0.4);
         }
 
         /* フッター */
         footer {
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             background: #000;
             border-top: 1px solid #111;
         }
 
-        .footer-links {
-            margin-bottom: 30px;
-        }
-
+        .footer-links { margin-bottom: 40px; }
         .footer-links a {
             color: #666;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 11px;
-            letter-spacing: 0.1em;
+            margin: 0 20px;
+            font-size: 12px;
             transition: color 0.3s;
         }
+        .footer-links a:hover { color: #d4af37; }
+        .copyright { font-size: 11px; color: #444; }
 
-        .footer-links a:hover {
-            color: #d4af37;
-        }
-
-        .copyright {
-            font-size: 10px;
-            color: #444;
-            letter-spacing: 0.05em;
-        }
-
-        /* レスポンシブ調整 */
         @media (max-width: 768px) {
+            .limit-badge { font-size: 18px; padding: 12px 30px; }
+            .intro-title { font-size: 22px; }
             .hero { padding-top: 15vh; }
-            .intro-section { padding: 80px 20px; }
         }
     </style>
 </head>
@@ -201,11 +194,13 @@
     <section class="intro-section">
         <div class="intro-container">
             <span class="limit-badge">限定 30 個</span>
+            
             <h2 class="intro-title">CUVÉE WAGYU NOIR</h2>
             
-            <p style="font-size: 14px; color: #ccc; margin-bottom: 40px; line-height: 2;">
+            <p class="intro-desc">
                 選び抜かれたA5ランク和牛と、天然の燕の巣。<br>
-                最高峰のレシピが織りなす、愛犬のための至高の体験を。
+                最高峰のレシピが織りなす、愛犬のための至高の体験を。<br>
+                5月1日の販売開始に先駆け、詳細をご案内いたします。
             </p>
 
             <a href="detail.html" class="detail-button">製品詳細を見る</a>
