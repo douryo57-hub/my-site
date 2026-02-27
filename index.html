@@ -3,102 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison de l'Éclat</title>
+    <title>Maison de l'Éclat | 愛犬への至高の贈り物</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Times New Roman", "Hiragino Mincho ProN", serif; color: #333; overflow-x: hidden; }
 
+        /* メインビジュアル */
         .hero {
             position: relative;
             width: 100%;
             height: 100vh;
-            background: url('your-image-path.jpg') no-repeat center center/cover;
+            background: url('hero-image.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* 文字を上に配置して製品を見せる */
-            padding-top: 60px;
-            color: #fff;
+            justify-content: flex-start;
+            padding-top: 10vh;
             text-align: center;
+            color: #fff;
         }
 
-        /* 文字を読みやすくするための上部シャドウ */
+        /* 文字の視認性を上げるグラデーション */
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 40%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+            height: 50%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
             z-index: 1;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 0 20px;
-        }
+        .hero-content { position: relative; z-index: 2; padding: 0 20px; }
+        .title { font-size: 32px; letter-spacing: 0.2em; color: #d4af37; margin-bottom: 15px; font-weight: normal; }
+        .english-text { font-size: 16px; letter-spacing: 0.1em; margin-bottom: 20px; font-style: italic; }
+        .japanese-text { font-size: 18px; letter-spacing: 0.1em; font-weight: 300; line-height: 2; }
 
-        .title {
-            font-size: 24px;
-            letter-spacing: 0.2em;
-            color: #d4af37; /* 高級感のあるゴールド */
-            margin-bottom: 10px;
-            font-family: 'Times New Roman', serif;
+        /* フッター（ここにリンクを集約） */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
         }
-
-        .english-text {
-            font-size: 18px;
-            letter-spacing: 0.1em;
-            margin-bottom: 15px;
-            opacity: 0.9;
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 13px;
+            transition: color 0.3s;
         }
-
-        .japanese-text {
-            font-size: 16px;
-            letter-spacing: 0.05em;
-            line-height: 1.8;
-            font-weight: 300;
-        }
+        .footer-links a:hover { color: #d4af37; }
+        .copyright { font-size: 11px; color: #555; }
 
         @media (max-width: 768px) {
-            .title { font-size: 20px; }
-            .english-text { font-size: 14px; }
-            .japanese-text { font-size: 13px; }
+            .title { font-size: 24px; }
+            .japanese-text { font-size: 14px; }
         }
     </style>
 </head>
 <body>
-
-    <section class="hero">
+    <header class="hero">
         <div class="hero-content">
             <h1 class="title">Maison de l'Éclat</h1>
             <p class="english-text">A5和牛と燕の巣。金色の一瓶に、永遠の愛を込めて。</p>
-            <p class="japanese-text">愛犬のために贈る最高品質の素材。この一瓶に、永遠の愛を込めて。</p>
+            <p class="japanese-text">愛犬のために贈る最高品質の素材。<br>この一瓶に、永遠の愛を込めて。</p>
         </div>
-    </section>
-
-</body>
-</html>
-
-    <section class="section">
-        <h2 class="en">The Philosophy</h2>
-        <p>代官山のアトリエで一つひとつ丁寧に紡がれる、至高のドッグ・ガストロノミー。</p>
-        <p>厳選された黒毛和牛の深みと、燕の巣がもたらす輝き。<br>
-        それは、家族という絆に相応しい、唯一無二の贈り物です。</p>
-
-        <div class="product-box">
-            <div class="badge">MAY PRE-OPEN</div>
-            <h3>Cuvée Wagyu & Nid d'Hirondelle</h3>
-            <p style="margin-top:20px; color:var(--gold);">限定 30瓶</p>
-            <p>¥8,500 (tax incl.)</p>
-            <a href="#" class="cta-btn">WAITLIST 登録</a>
-        </div>
-    </section>
+    </header>
 
     <footer>
-        &copy; 2026 MAISON DE L'ÉCLAT TOKYO. ALL RIGHTS RESERVED.
+        <div class="footer-links">
+            <a href="legal.html">特定商取引法に基づく表記</a>
+            <a href="legal.html#privacy">プライバシーポリシー</a>
+        </div>
+        <p class="copyright">&copy; 2026 Maison de l'Éclat. All Rights Reserved.</p>
     </footer>
-        <a href="law.html">特定商取引法に基づく表記 / プライバシーポリシー</a>
 </body>
 </html>
