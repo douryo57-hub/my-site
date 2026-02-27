@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品詳細 | Maison de l'Éclat</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Times New Roman", "Hiragino Mincho ProN", serif;
+            color: #fff;
+            background-color: #000;
+            line-height: 1.8;
+        }
+
+        /* ヘッダー的な要素 */
+        .nav-back {
+            padding: 30px;
+            text-align: left;
+        }
+        .nav-back a { color: #888; text-decoration: none; font-size: 13px; letter-spacing: 0.1em; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 100px; }
+
+        .product-visual {
+            width: 100%;
+            height: 60vh;
+            background: url('top-image.jpg') no-repeat center center/cover;
+            margin-bottom: 60px;
+        }
+
+        h2 { font-size: 28px; color: #d4af37; letter-spacing: 0.2em; margin-bottom: 40px; text-align: center; font-weight: normal; }
+        
+        .section { margin-bottom: 80px; }
+        .section-title { color: #d4af37; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; letter-spacing: 0.1em; }
+        .content-text { font-size: 15px; font-weight: 300; letter-spacing: 0.05em; color: #ccc; }
+
+        /* スペック表 */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border-bottom: 1px solid #222; padding: 15px; text-align: left; font-size: 14px; }
+        th { color: #d4af37; width: 30%; font-weight: normal; }
+
+        /* 予約エリア */
+        .reservation-area {
+            background: #0a0a0a;
+            padding: 60px 40px;
+            text-align: center;
+            border: 1px solid #d4af37;
+        }
+        .price { font-size: 28px; color: #fff; margin-bottom: 30px; }
+        .cta-button {
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            padding: 22px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-back"><a href="index.html">← TOP</a></div>
+
+    <div class="container">
+        <div class="product-visual"></div>
+
+        <h2>CUVÉE WAGYU NOIR</h2>
+
+        <div class="section">
+            <h3 class="section-title">CONCEPT</h3>
+            <p class="content-text">
+                愛犬に、私たちと同じ、あるいはそれ以上の喜びを。
+                選び抜かれたA5ランクの和牛と、古来より珍重されてきた燕の巣。
+                二つの至宝を一つの瓶に封じ込めた「Maison de l'Éclat」の自信作です。
+            </p>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">INGREDIENTS</h3>
+            <table>
+                <tr><th>主原材料</th><td>厳選A5ランク和牛、天然燕の巣、和牛ボーンブロス</td></tr>
+                <tr><th>内容量</th><td>120g</td></tr>
+                <tr><th>賞味期限</th><td>製造より28日（未開封時）</td></tr>
+                <tr><th>保存方法</th><td>冷蔵庫にて保存（開封後は要冷蔵）</td></tr>
+            </table>
+        </div>
+
+        <div class="reservation-area">
+            <p style="color: #d4af37; font-size: 12px; margin-bottom: 10px;">5月1日お届け分（限定30個）</p>
+            <p class="price">¥22,000 <span style="font-size: 14px;">(tax incl.)</span></p>
+            <a href="YOUR_STRIPE_URL" class="cta-button">事前予約をする</a>
+            <p style="font-size: 11px; color: #666; margin-top: 20px;">
+                ※4/30まで決済は保留され、5/1に確定いたします。
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
