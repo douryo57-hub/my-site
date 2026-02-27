@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maison de l'Éclat | 愛犬への至高の贈り物</title>
     <style>
+        /* 基本設定 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: "Times New Roman", "Hiragino Mincho ProN", serif;
             color: #fff;
             background-color: #000;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* メインビジュアル */
@@ -18,27 +20,27 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            /* 背景画像の設定 */
+            /* 画像パスはご自身の環境に合わせて変更してください */
             background: url('hero-image.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding-top: 8vh;
+            padding-top: 10vh;
             text-align: center;
         }
 
-        /* 文字を読みやすくするための強力なグラデーション */
+        /* 視認性を高めるための強力なオーバーレイ */
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 70%; /* グラデーションの範囲を広げて製品と文字を分離 */
+            height: 75%;
             background: linear-gradient(to bottom, 
                 rgba(0,0,0,0.9) 0%, 
-                rgba(0,0,0,0.6) 40%, 
+                rgba(0,0,0,0.5) 50%, 
                 rgba(0,0,0,0) 100%);
             z-index: 1;
         }
@@ -49,71 +51,130 @@
             padding: 0 20px;
         }
 
-        /* 1行目: ブランド名 */
+        /* ブランド名（フランス語） */
         .title {
-            font-size: 38px;
-            letter-spacing: 0.25em;
-            color: #d4af37; /* 高級感のあるゴールド */
-            margin-bottom: 10px;
+            font-size: clamp(32px, 5vw, 42px);
+            letter-spacing: 0.3em;
+            color: #d4af37; /* ゴールド */
+            margin-bottom: 15px;
             font-weight: normal;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 15px rgba(0,0,0,0.5);
         }
 
-        /* 2行目: 英文 */
+        /* 英文キャッチコピー */
         .english-text {
-            font-size: 16px;
+            font-size: clamp(14px, 2vw, 17px);
             letter-spacing: 0.1em;
             margin-bottom: 30px;
             font-style: italic;
             opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.8;
         }
 
-        /* 3行目（追加）: カタカナブランド名 */
+        /* ブランド名（カタカナ） */
         .brand-reading {
-            font-size: 14px;
-            letter-spacing: 0.3em;
-            margin-bottom: 10px;
-            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            letter-spacing: 0.4em;
+            margin-bottom: 12px;
+            color: rgba(255,255,255,0.7);
             font-weight: 300;
         }
 
-        /* 4行目: 日本語キャッチコピー */
+        /* 日本語キャッチコピー */
         .japanese-text {
-            font-size: 18px;
-            letter-spacing: 0.15em;
+            font-size: clamp(15px, 2.5vw, 19px);
+            letter-spacing: 0.2em;
             font-weight: 300;
-            line-height: 2.2;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+            line-height: 2.4;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* 導入セクション */
+        .intro-section {
+            background: #0a0a0a;
+            padding: 120px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .intro-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .limit-badge {
+            display: inline-block;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 6px 24px;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            margin-bottom: 40px;
+        }
+
+        .intro-title {
+            font-size: 24px;
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        /* 詳細ページへのボタン */
+        .detail-button {
+            display: inline-block;
+            width: 100%;
+            max-width: 380px;
+            padding: 22px;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 0.3em;
+            font-size: 14px;
+            transition: all 0.4s ease;
+            margin-top: 20px;
+        }
+
+        .detail-button:hover {
+            background: #d4af37;
+            color: #000;
         }
 
         /* フッター */
         footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background: rgba(0,0,0,0.5);
-            padding: 30px 20px;
+            padding: 80px 20px;
             text-align: center;
-            z-index: 2;
+            background: #000;
+            border-top: 1px solid #111;
         }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
         .footer-links a {
-            color: #ccc;
+            color: #666;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 12px;
+            font-size: 11px;
+            letter-spacing: 0.1em;
             transition: color 0.3s;
         }
-        .footer-links a:hover { color: #d4af37; }
 
-        /* スマホ対応 */
+        .footer-links a:hover {
+            color: #d4af37;
+        }
+
+        .copyright {
+            font-size: 10px;
+            color: #444;
+            letter-spacing: 0.05em;
+        }
+
+        /* レスポンシブ調整 */
         @media (max-width: 768px) {
-            .title { font-size: 28px; }
-            .english-text { font-size: 13px; }
-            .japanese-text { font-size: 15px; }
-            .hero { padding-top: 12vh; }
+            .hero { padding-top: 15vh; }
+            .intro-section { padding: 80px 20px; }
         }
     </style>
 </head>
@@ -137,12 +198,26 @@
         </div>
     </header>
 
+    <section class="intro-section">
+        <div class="intro-container">
+            <span class="limit-badge">限定 30 個</span>
+            <h2 class="intro-title">CUVÉE WAGYU NOIR</h2>
+            
+            <p style="font-size: 14px; color: #ccc; margin-bottom: 40px; line-height: 2;">
+                選び抜かれたA5ランク和牛と、天然の燕の巣。<br>
+                最高峰のレシピが織りなす、愛犬のための至高の体験を。
+            </p>
+
+            <a href="detail.html" class="detail-button">製品詳細を見る</a>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-links">
             <a href="legal.html">特定商取引法に基づく表記</a>
             <a href="legal.html#privacy">プライバシーポリシー</a>
         </div>
-        <p style="font-size: 10px; color: #666; margin-top: 10px;">&copy; 2026 Maison de l'Éclat.</p>
+        <p class="copyright">&copy; 2026 Maison de l'Éclat. All Rights Reserved.</p>
     </footer>
 
 </body>
