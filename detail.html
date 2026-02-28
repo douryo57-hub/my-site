@@ -14,23 +14,41 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ナビゲーション */
+/* ナビゲーションの修正 */
         .nav-back {
-            position: absolute;
-            top: 25px;
+            position: fixed; /* スクロールしても常に表示されるように固定 */
+            top: 20px;
             left: 20px;
-            z-index: 10;
+            z-index: 100;
         }
+
         .nav-back a {
+            display: flex;
+            align-items: center;
             color: #fff;
             text-decoration: none;
-            font-size: 11px;
+            font-size: 10px;
             letter-spacing: 0.2em;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 8px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
-            transition: 0.3s;
+            background: rgba(0, 0, 0, 0.6); /* 背景を少し濃くして視認性を確保 */
+            padding: 12px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3); /* ほのかにゴールドの枠線 */
+            backdrop-filter: blur(10px); /* 背景のボケを強く */
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-back a:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 1);
+            color: #d4af37;
+            padding-left: 25px; /* ホバー時に少し右に動く演出 */
+        }
+
+        .nav-back a::before {
+            content: '←';
+            margin-right: 8px;
+            font-size: 12px;
         }
 
         .container { max-width: 800px; margin: 0 auto; padding: 0 0 100px; }
