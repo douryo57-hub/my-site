@@ -14,18 +14,26 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* ナビゲーション：画像の上に静止して配置 */
+        .nav-back {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            z-index: 100;
+        }
+
         .nav-back a {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             color: #fff;
             text-decoration: none;
             font-size: 10px;
             letter-spacing: 0.2em;
-            background: rgba(0, 0, 0, 0.6); /* 背景を少し濃くして視認性を確保 */
+            background: rgba(0, 0, 0, 0.4);
             padding: 12px 20px;
-            border: 1px solid rgba(212, 175, 55, 0.3); /* ほのかにゴールドの枠線 */
-            backdrop-filter: blur(10px); /* 背景のボケを強く */
-            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             transition: all 0.4s ease;
             text-transform: uppercase;
         }
@@ -34,23 +42,16 @@
             background: rgba(212, 175, 55, 0.1);
             border: 1px solid rgba(212, 175, 55, 1);
             color: #d4af37;
-            padding-left: 25px; /* ホバー時に少し右に動く演出 */
-        }
-
-        .nav-back a::before {
-            content: '←';
-            margin-right: 8px;
-            font-size: 12px;
         }
 
         .container { max-width: 800px; margin: 0 auto; padding: 0 0 100px; }
 
-        /* メインビジュアル：hero-image.jpg を使用 */
+        /* メインビジュアル：保存したhero-image.jpgを使用 */
         .product-visual {
             width: 100%;
-            height: 50vh;
+            height: 55vh;
             background: url('hero-image.jpg') no-repeat center center/cover;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.8);
         }
 
@@ -58,18 +59,18 @@
             font-size: clamp(24px, 4vw, 32px);
             color: #d4af37; 
             letter-spacing: 0.3em; 
-            margin-bottom: 60px; 
+            margin-bottom: 80px; 
             text-align: center; 
             font-weight: normal; 
         }
         
-        .section { margin-bottom: 100px; padding: 0 25px; }
+        .section { margin-bottom: 120px; padding: 0 25px; }
         .section-title { 
             color: #d4af37; 
-            font-size: 16px; 
+            font-size: 14px; 
             border-bottom: 1px solid #333; 
-            padding-bottom: 12px; 
-            margin-bottom: 40px; 
+            padding-bottom: 15px; 
+            margin-bottom: 50px; 
             letter-spacing: 0.2em;
             text-align: center;
         }
@@ -77,14 +78,14 @@
         /* 燕の巣 シズル画像ボックス */
         .syrup-image-box {
             width: 100%;
-            margin: 40px 0;
+            margin: 50px 0;
             text-align: center;
         }
         .syrup-image-box img {
             width: 100%;
             height: auto;
             border-radius: 2px;
-            box-shadow: 0 0 30px rgba(212,175,55,0.2);
+            box-shadow: 0 0 40px rgba(212,175,55,0.15);
         }
         .img-caption {
             font-size: 11px;
@@ -97,175 +98,8 @@
 
         /* 3つの魔力セクション */
         .benefit-card {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             border-left: 1px solid #d4af37;
-            padding-left: 20px;
+            padding-left: 25px;
         }
-        .benefit-title {
-            color: #d4af37;
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 12px;
-            letter-spacing: 0.1em;
-        }
-
-        /* 投資メッセージボックス */
-        .investment-box {
-            background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
-            padding: 50px 30px;
-            text-align: center;
-            border: 1px solid #222;
-            margin-top: 60px;
-        }
-        .investment-title {
-            color: #d4af37;
-            font-size: 18px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            letter-spacing: 0.2em;
-        }
-
-        /* 予約エリア */
-        .reservation-area {
-            background: #080808;
-            padding: 80px 30px;
-            text-align: center;
-            border: 1px solid #d4af37;
-            margin: 0 20px;
-        }
-        .price { font-size: 32px; color: #fff; margin-bottom: 40px; }
-        .cta-button {
-            display: inline-block;
-            width: 100%;
-            max-width: 400px;
-            padding: 24px;
-            background: #d4af37;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 0.3em;
-            transition: 0.3s;
-        }
-        .cta-button:hover { opacity: 0.8; }
-
-        footer { padding: 60px 0; text-align: center; font-size: 10px; color: #444; }
-    </style>
-</head>
-<body>
-
-    <nav class="nav-back"><a href="index.html">← TOP</a></nav>
-
-    <div class="container">
-        <div class="product-visual"></div>
-
-        <h2>CUVÉE WAGYU NOIR</h2>
-
-        <section class="section">
-            <h3 class="section-title">CONCEPT</h3>
-            <p class="content-text" style="text-align: center;">
-                愛犬に、私たちと同じ、あるいはそれ以上の喜びを。<br>
-                選び抜かれたA5ランク黒毛和牛と、天然の燕の巣。
-            </p>
-            
-            <div class="syrup-image-box">
-                <img src="nest-syrup.jpg" alt="天然燕の巣とボーンブロス">
-                <p class="img-caption">黄金色のボーンブロスにたゆたう、最高品質の燕の巣。</p>
-            </div>
-
-            <div style="margin-top: 60px;">
-                <h4 style="color: #d4af37; font-size: 19px; margin-bottom: 40px; text-align: center; letter-spacing: 0.2em;">
-                    「燕の巣」がもたらす、3つの奇跡
-                </h4>
-
-                <div class="benefit-card">
-                    <p class="benefit-title">01. ローヤルゼリーの200倍の「シアル酸」</p>
-                    <p class="content-text">
-                        燕の巣の核心成分「シアル酸」は、免疫の司令塔。ローヤルゼリーの約200倍という圧倒的な含有量が、愛犬の身体を内側から守る「見えない鎧」となります。
-                    </p>
-                </div>
-
-                <div class="benefit-card">
-                    <p class="benefit-title">02. 被毛を蘇らせる「天然のEGF」</p>
-                    <p class="content-text">
-                        細胞再生を促す天然のEGFが、パサつきがちな被毛に宝石のようなツヤを取り戻します。いくつになっても美しい毛並みを維持する、究極のアンチエイジング。
-                    </p>
-                </div>
-
-                <div class="benefit-card">
-                    <p class="benefit-title">03. 「命のスープ」による究極の吸収率</p>
-                    <p class="content-text">
-                        24時間炊き出した和牛ボーンブロスが、燕の巣の栄養を優しく包み込みます。食の細い愛犬やシニア犬でも、その潤いを余すことなく吸収できる、至高の滋養強壮です。
-                    </p>
-                </div>
-            </div>
-
-<div class="investment-box" style="margin-bottom: 120px; border: none; background: transparent;">
-            <p class="investment-title" style="font-size: 20px; margin-bottom: 30px; border-bottom: 1px solid #d4af37; display: inline-block; padding-bottom: 10px;">
-                愛犬への「未来」への投資
-            </p>
-            <p class="content-text" style="font-size: 15px; line-height: 2.2; color: #eee; font-style: italic;">
-                西太后が愛した不老長寿の秘薬を、現代の愛犬家へ。<br>
-                「最近、元気がなくなった」「毛艶が以前ほどではない」<br>
-                そう感じているあなたにこそ、この一瓶の奇跡を。
-            </p>
-        </div>
-
-        <section class="section" style="margin-bottom: 140px;">
-            <h3 class="section-title">PRODUCT DETAILS</h3>
-            <table style="border-top: 1px solid #333; margin-top: 20px;">
-                <tr>
-                    <th style="padding: 25px 0; border-bottom: 1px solid #222; font-weight: normal; color: #d4af37; width: 30%;">製品名</th>
-                    <td style="padding: 25px 0; border-bottom: 1px solid #222; color: #fff; letter-spacing: 0.1em;">CUVÉE WAGYU NOIR</td>
-                </tr>
-                <tr>
-                    <th style="padding: 25px 0; border-bottom: 1px solid #222; font-weight: normal; color: #d4af37;">主原材料</th>
-                    <td style="padding: 25px 0; border-bottom: 1px solid #222; color: #fff; line-height: 1.6;">A5ランク黒毛和牛、天然燕の巣、和牛ボーンブロス、シアル酸、EGF</td>
-                </tr>
-                <tr>
-                    <th style="padding: 25px 0; border-bottom: 1px solid #222; font-weight: normal; color: #d4af37;">内容量</th>
-                    <td style="padding: 25px 0; border-bottom: 1px solid #222; color: #fff;">140g / 1瓶</td>
-                </tr>
-                <tr>
-                    <th style="padding: 25px 0; border-bottom: 1px solid #222; font-weight: normal; color: #d4af37;">賞味期限</th>
-                    <td style="padding: 25px 0; border-bottom: 1px solid #222; color: #fff;">製造より21日（未開封時）</td>
-                </tr>
-                <tr>
-                    <th style="padding: 25px 0; border-bottom: 1px solid #222; font-weight: normal; color: #d4af37;">原産国</th>
-                    <td style="padding: 25px 0; border-bottom: 1px solid #222; color: #fff;">A5ランク黒毛和牛：日本、天然燕の巣：インドネシア</td> 
-                </tr>
-                <tr>
-                    <th style="padding: 25px 0; border-bottom: 1px solid #222; font-weight: normal; color: #d4af37;">製造国</th>
-                    <td style="padding: 25px 0; border-bottom: 1px solid #222; color: #fff;">日本</td>
-                </tr>
-            </table>
-        </section>
-
-        <div class="reservation-area" style="background: #050505; border: 1px solid #222; padding: 100px 40px; border-radius: 2px;">
-            <p class="limit-text" style="color: #d4af37; letter-spacing: 0.5em; font-size: 14px; margin-bottom: 20px; text-transform: uppercase;">Limited 30 Units</p>
-            <p class="price" style="font-size: 42px; font-weight: 200; margin-bottom: 50px; letter-spacing: 0.05em;">
-                ¥9,000 <span style="font-size: 14px; color: #888;">(tax incl.)</span>
-            </p>
-            
-            <a href="YOUR_STRIPE_URL" class="cta-button" style="background: #d4af37; color: #000; padding: 25px 60px; text-decoration: none; font-weight: bold; font-size: 16px; letter-spacing: 0.3em; transition: 0.4s; display: inline-block; box-shadow: 0 15px 30px rgba(212,175,55,0.15);">
-                予約を確定する
-            </a>
-            
-            <div style="margin-top: 50px; border-top: 1px solid #1a1a1a; pt: 30px;">
-                <p style="font-size: 12px; color: #777; line-height: 2; letter-spacing: 0.05em;">
-                    ※4月30日までは「枠の確保」のみを行い、5月1日に決済が確定いたします。<br>
-                    ※30個に達した時点で受付終了となります。
-                </p>
-            </div>
-        </div>
-    </div>
-
-    
-    <footer style="padding: 120px 0 60px; text-align: center;">
-    <a href="https://instagram.com/maison_de_leclat" target="_blank" style="display: inline-block; margin-bottom: 25px; transition: 0.3s;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-    </a>
-    <p class="footer-copy" style="font-size: 11px; color: #444; letter-spacing: 0.2em;">&copy; 2026 Maison de l'Éclat.</p>
-</footer>
-
-</body>
-</html>
+        .benefit
