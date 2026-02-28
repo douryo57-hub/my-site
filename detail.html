@@ -14,35 +14,53 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ナビゲーション：画像の上に静止して配置 */
-        .nav-back {
-            position: absolute;
-            top: 30px;
-            left: 20px;
-            z-index: 100;
-        }
+        /* ナビゲーション：より洗練されたミニマルデザインへ */
+.nav-back {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    z-index: 100;
+}
 
-        .nav-back a {
-            display: inline-flex;
-            align-items: center;
-            color: #fff;
-            text-decoration: none;
-            font-size: 10px;
-            letter-spacing: 0.2em;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 12px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            transition: all 0.4s ease;
-            text-transform: uppercase;
-        }
+.nav-back a {
+    display: inline-flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 9px; /* 少し小さくして繊細さを出す */
+    letter-spacing: 0.25em;
+    /* ガラスのような透明感 */
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-transform: uppercase;
+}
 
-        .nav-back a:hover {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 1);
-            color: #d4af37;
-        }
+/* 矢印を細く繊細に */
+.nav-back a::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
+    margin-right: 12px;
+    transition: 0.4s;
+}
+
+.nav-back a:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    color: #d4af37;
+}
+
+.nav-back a:hover::before {
+    background: #d4af37;
+    width: 25px; /* ホバー時に線が伸びるエレガントな演出 */
+
+}
 
         .container { max-width: 800px; margin: 0 auto; padding: 0 0 100px; }
 
