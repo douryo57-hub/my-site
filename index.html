@@ -30,15 +30,15 @@
             text-align: center;
         }
 
-        /* 視認性を高めるオーバーレイ（明るさを調整） */
+        /* 視認性を高めるオーバーレイ（文字の見えやすさと画像の明るさを両立） */
         .hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 80%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(to bottom, 
-                rgba(0,0,0,0.6) 0%,   /* 一番上：黒から透明度を上げたグレーへ */
-                rgba(0,0,0,0.3) 40%,  /* 中央：黒からさらに透明度を上げたグレーへ */
-                rgba(0,0,0,0) 100%);  /* 一番下：透明（そのまま） */
+                rgba(0,0,0,0.7) 0%,   /* 上部は文字を浮かせるために少し暗めに */
+                rgba(0,0,0,0.3) 40%, 
+                rgba(0,0,0,0) 80%);   /* 下部は画像をしっかり見せるために透明に */
             z-index: 1;
         }
 
@@ -46,6 +46,8 @@
             position: relative;
             z-index: 2;
             padding: 0 20px;
+            /* 案1: テキスト全体に影をつけて背景から浮かせる */
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.7);
         }
 
         .title {
@@ -54,7 +56,6 @@
             color: #d4af37;
             margin-bottom: 15px;
             font-weight: normal;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.7);
         }
 
         .english-text {
@@ -70,7 +71,7 @@
             font-size: 14px;
             letter-spacing: 0.4em;
             margin-bottom: 15px;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.9); /* 少し明るくして視認性アップ */
         }
 
         .japanese-text {
@@ -78,6 +79,7 @@
             letter-spacing: 0.2em;
             font-weight: 300;
             line-height: 2.6;
+            color: #ffffff;
         }
 
         /* 導入・詳細誘導セクション */
@@ -200,7 +202,7 @@
         </div>
     </section>
 
-<footer style="padding: 100px 20px 60px; text-align: center; border-top: 1px solid #1a1a1a; background: #000;">
+    <footer style="padding: 100px 20px 60px; text-align: center; border-top: 1px solid #1a1a1a; background: #000;">
         <div style="margin-bottom: 40px;">
             <a href="https://www.instagram.com/maison_de_leclat" target="_blank" style="text-decoration: none; transition: 0.3s; display: inline-block;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
