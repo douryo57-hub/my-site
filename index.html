@@ -15,19 +15,89 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* メインビジュアル */
+/* メインビジュアル */
         .hero {
             position: relative;
             width: 100%;
             height: 100vh;
-            /* 指示通り hero-image.jpg を使用 */
             background: url('hero-image.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding-top: 10vh;
+            padding-top: 15vh; /* 少し下げて余白を確保 */
             text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.7) 0%, 
+                rgba(0,0,0,0.2) 50%, 
+                rgba(0,0,0,0) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 40px;
+            text-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* 影をより自然に */
+        }
+
+        .title {
+            font-size: clamp(30px, 5vw, 42px); /* 少しサイズを抑えて品良く */
+            letter-spacing: 0.5em; /* 字間を大幅に広げる */
+            color: #d4af37;
+            margin-bottom: 25px;
+            font-weight: 100; /* 極細にする */
+            text-transform: uppercase;
+        }
+
+        .english-text {
+            font-size: clamp(12px, 1.5vw, 15px);
+            letter-spacing: 0.2em;
+            margin-bottom: 60px; /* 次のテキストとの距離を離す */
+            font-style: italic;
+            opacity: 0.8;
+            line-height: 2;
+        }
+
+        .brand-reading {
+            font-size: 11px; /* 小さくして添える程度に */
+            letter-spacing: 0.6em;
+            margin-bottom: 20px;
+            color: rgba(212,175,55,0.6); /* 金色を薄く混ぜる */
+        }
+
+        .japanese-text {
+            font-size: clamp(15px, 2vw, 18px);
+            letter-spacing: 0.3em;
+            font-weight: 200;
+            line-height: 3; /* 行間を贅沢に取る */
+            color: #fff;
+        }
+
+        /* 導入・詳細誘導セクション */
+        .intro-section {
+            background: #000; /* より深い黒へ */
+            padding: 180px 20px; /* 余白をさらに贅沢に */
+            text-align: center;
+        }
+
+        .limit-badge {
+            display: inline-block;
+            border: 1px solid #d4af37; /* 線を細く */
+            color: #d4af37;
+            padding: 12px 60px;
+            font-size: 20px;
+            letter-spacing: 0.5em;
+            margin-bottom: 60px;
+            font-weight: 300;
+            background: transparent;
+            position: relative;
         }
 
         /* 視認性を高めるオーバーレイ（文字の見えやすさと画像の明るさを両立） */
