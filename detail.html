@@ -1,25 +1,351 @@
-<div class="price-grid">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison de l’Éclat | 至高の愛を、形にする。</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F9F7F2; /* 洗練されたシャンパンベージュ */
+            --text-color: #1A1A1A;
+            --gold: #D4AF37; /* ブランドカラー：ゴールド */
+            --accent-gray: #707070;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            padding: 2.5rem;
+            text-align: center;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.75;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            color: var(--white);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-content p {
+            color: var(--white);
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            letter-spacing: 0.25em;
+        }
+
+        /* Section Global */
+        .section-container {
+            max-width: 1100px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Ingredient Story */
+        .ingredient-flex {
+            display: flex;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 8rem;
+        }
+
+        .ingredient-flex:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .ingredient-text {
+            flex: 1;
+        }
+
+        .label {
+            font-size: 0.85rem;
+            color: var(--gold);
+            letter-spacing: 0.3em;
+            margin-bottom: 1.2rem;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .ingredient-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            border-left: 2px solid var(--gold);
+            padding-left: 1.5rem;
+        }
+
+        .ingredient-visual {
+            flex: 1;
+            background-color: #E5E1D8;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .ingredient-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Selection (Matsu-Take-Ume) */
+        .selection-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .price-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .price-card {
+            background: var(--white);
+            padding: 4rem 2.5rem;
+            flex: 1;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.05);
+        }
+
+        /* Highlight the 'Take' (Standard) option */
+        .price-card.featured {
+            border: 1px solid var(--gold);
+            position: relative;
+            background-color: #FFF;
+            z-index: 10;
+        }
+
+        .price-card.featured::before {
+            content: "Recommended Program";
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.6rem 2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            width: max-content;
+        }
+
+        .rank-name {
+            font-size: 1.6rem;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .price-amount {
+            font-size: 2.2rem;
+            margin: 1.5rem 0;
+            font-weight: 300;
+            color: var(--text-color);
+        }
+
+        .price-desc {
+            font-size: 0.95rem;
+            color: var(--accent-gray);
+            margin-bottom: 2rem;
+            min-height: 80px;
+        }
+
+        /* Stripe Button Style */
+        .btn-stripe {
+            display: inline-block;
+            background: var(--text-color);
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .btn-stripe:hover {
+            background: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 6rem 2rem;
+            background-color: var(--bg-color);
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .footer-logo {
+            font-size: 1.2rem;
+            letter-spacing: 0.4em;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: var(--accent-gray);
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 900px) {
+            .price-grid { flex-direction: column; align-items: stretch; }
+            .ingredient-flex { flex-direction: column !important; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .price-card { margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Maison de l’Éclat</div>
+    </header>
+
+    <section class="hero">
+        <img src="hero-image.jpg" alt="Companion with Radiance" class="hero-img">
+        <div class="hero-content">
+            <span class="label" style="color:#FFF;">The Pinnacle of Gourmet Life</span>
+            <h1>一生を、輝きで満たす。</h1>
+            <p>A5ランク和牛と、天然 燕の巣が織りなす至福。</p>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="ingredient-flex">
+            <div class="ingredient-text">
+                <span class="label">Ingredients 01</span>
+                <h2>シアル酸の奇跡</h2>
+                <p>
+                    ロイヤルゼリーの200倍のシアル酸を含有する、最高級アナツバメの巣を贅沢に配合。
+                    内側からバリア機能を整え、毛並みにシルクのような光沢を。
+                    それは、愛犬の「本来の美しさ」を目覚めさせる儀式。
+                </p>
+            </div>
+            <div class="ingredient-visual">
+                <div style="width:100%; height:100%; background: url('birds-nest.jpg') center/cover;"></div>
+            </div>
+        </div>
+
+        <div class="ingredient-flex">
+            <div class="ingredient-text">
+                <span class="label">Ingredients 02</span>
+                <h2>A5ランク和牛の品格</h2>
+                <p>
+                    厳選された黒毛和牛の最高峰「A5」のみを使用。
+                    愛犬の消化を妨げない低融点の脂質と、良質なタンパク質。
+                    美食家である愛犬の期待を裏切らない、圧倒的な嗜好性を約束します。
+                </p>
+            </div>
+            <div class="ingredient-visual">
+                <div style="width:100%; height:100%; background: url('wagyu.jpg') center/cover;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="selection-title">
+            <span class="label">Collection</span>
+            <h2>愛犬への約束を選択する</h2>
+        </div>
+
+        <div class="price-grid">
             <div class="price-card">
-                <span class="rank-label">Grand</span>
-                <h3>The Legacy 90-Day</h3>
+                <span class="label">Grand</span>
+                <h3 class="rank-name">The Legacy</h3>
                 <p class="price-amount">¥88,000</p>
-                <p>300g × 3瓶<br>細胞から作り直す3ヶ月。シリアルNo.001〜010優先割当。</p>
-                <a href="https://buy.stripe.com/YOUR_MATSU_LINK" class="btn-buy">愛犬の輝きを予約する</a>
+                <p class="price-desc">
+                    300g × 3瓶 セット<br>
+                    90日間の集中ウェルネスプログラム。<br>
+                    シリアルナンバー 001〜010を優先提供。
+                </p>
+                <a href="ここにStripeの松リンクを入力" class="btn-stripe">愛犬の輝きを予約する</a>
             </div>
 
             <div class="price-card featured">
-                <span class="rank-label">Classic</span>
-                <h3>The Classic 30-Day</h3>
+                <span class="label">Classic</span>
+                <h3 class="rank-name">The Classic</h3>
                 <p class="price-amount">¥28,000</p>
-                <p>300g × 1瓶<br>日常を洗練させる30日間。最も選ばれるブランドの標準。</p>
-                <a href="https://buy.stripe.com/YOUR_TAKE_LINK" class="btn-buy">愛犬の輝きを予約する</a>
+                <p class="price-desc">
+                    300g × 1瓶<br>
+                    日常を洗練させる30日間の体験。<br>
+                    最も多くの愛犬家に選ばれる標準プラン。
+                </p>
+                <a href="ここにStripeの竹リンクを入力" class="btn-stripe">愛犬の輝きを予約する</a>
             </div>
 
             <div class="price-card">
-                <span class="rank-label">Petit</span>
-                <h3>The Discovery Jar</h3>
+                <span class="label">Petit</span>
+                <h3 class="rank-name">The Discovery</h3>
                 <p class="price-amount">¥15,000</p>
-                <p>120g × 1瓶<br>運命との邂逅。まずはその驚異的な嗜好性と輝きを試したい方へ。</p>
-                <a href="https://buy.stripe.com/YOUR_UME_LINK" class="btn-buy">愛犬の輝きを予約する</a>
+                <p class="price-desc">
+                    120g × 1瓶<br>
+                    未知なる出会いのための体験用サイズ。<br>
+                    その驚異的な嗜好性と輝きの予兆を確認。
+                </p>
+                <a href="ここにStripeの梅リンクを入力" class="btn-stripe">愛犬の輝きを予約する</a>
             </div>
         </div>
+    </section>
+
+    <footer>
+        <span class="footer-logo">Maison de l’Éclat</span>
+        <p class="copyright">© 2026 Maison de l’Éclat. Exclusive Gourmet for Loyal Companions.</p>
+    </footer>
+
+</body>
+</html>
