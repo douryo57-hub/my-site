@@ -3,245 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison de l'Éclat | 愛犬への至高の贈り物</title>
-<style>
-    /* 基本設定 */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        font-family: "Times New Roman", "Hiragino Mincho ProN", serif;
-        color: #fff;
-        background-color: #000;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-    }
-
-    /* メインビジュアル：1枚の画像に固定 */
-    .hero {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        /* 指示通り hero-image.jpg を使用 */
-        background: url('hero-image (1).jpg') no-repeat center center/cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 15vh;
-        text-align: center;
-    }
-
-    /* 視認性を高めるオーバーレイ（文字を浮き立たせつつ画像を生かす） */
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(to bottom, 
-            rgba(0,0,0,0.7) 0%,   /* 上部は文字を浮かせるために少し暗めに */
-            rgba(0,0,0,0.3) 40%, 
-            rgba(0,0,0,0) 80%);   /* 下部は画像を見せるために透明に */
-        z-index: 1;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        padding: 0 40px;
-        /* 以前適用した「案1」の影を維持：背景と被っても見やすくなります */
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.7);
-    }
-
-    .title {
-        font-size: clamp(30px, 5vw, 42px);
-        letter-spacing: 0.5em;
-        color: #d4af37;
-        margin-bottom: 25px;
-        font-weight: 100;
-        text-transform: uppercase;
-    }
-
-    .english-text {
-        font-size: clamp(12px, 1.5vw, 15px);
-        letter-spacing: 0.2em;
-        margin-bottom: 60px;
-        font-style: italic;
-        opacity: 0.8;
-        line-height: 2;
-    }
-
-    .brand-reading {
-        font-size: 11px;
-        letter-spacing: 0.6em;
-        margin-bottom: 20px;
-        color: rgba(212,175,55,0.7);
-    }
-
-    .japanese-text {
-        font-size: clamp(15px, 2vw, 18px);
-        letter-spacing: 0.3em;
-        font-weight: 200;
-        line-height: 3;
-        color: #fff;
-    }
-
-        /* 導入・詳細誘導セクション */
-        .intro-section {
-            background: #000; /* より深い黒へ */
-            padding: 180px 20px; /* 余白をさらに贅沢に */
-            text-align: center;
+    <title>Maison de l’Éclat | 至高の愛を、この一瓶に。</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --black: #000000;
         }
 
-        .limit-badge {
-            display: inline-block;
-            border: 1px solid #d4af37; /* 線を細く */
-            color: #d4af37;
-            padding: 12px 60px;
-            font-size: 20px;
-            letter-spacing: 0.5em;
-            margin-bottom: 60px;
-            font-weight: 300;
-            background: transparent;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Hero Section (瓶画像の上に文字を重ねる) --- */
+        .hero {
             position: relative;
-        }
-
-        /* 視認性を高めるオーバーレイ（文字の見えやすさと画像の明るさを両立） */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, 
-                rgba(0,0,0,0.7) 0%,   /* 上部は文字を浮かせるために少し暗めに */
-                rgba(0,0,0,0.3) 40%, 
-                rgba(0,0,0,0) 80%);   /* 下部は画像をしっかり見せるために透明に */
-            z-index: 1;
+            height: 100vh;
+            width: 100%;
+            /* ファイル名を hero-image (1).jpg に指定 */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('hero-image (1).jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
+            z-index: 10;
             padding: 0 20px;
-            /* 案1: テキスト全体に影をつけて背景から浮かせる */
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.7);
         }
 
         .title {
-            font-size: clamp(34px, 6vw, 48px);
-            letter-spacing: 0.3em;
-            color: #d4af37;
-            margin-bottom: 15px;
-            font-weight: normal;
+            color: var(--gold);
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            letter-spacing: 0.35em;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
         }
 
         .english-text {
-            font-size: clamp(14px, 2vw, 18px);
-            letter-spacing: 0.1em;
-            margin-bottom: 35px;
-            font-style: italic;
-            opacity: 0.9;
-            line-height: 1.8;
+            font-size: clamp(0.75rem, 2vw, 1.1rem);
+            letter-spacing: 0.15em;
+            margin-bottom: 3.5rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
         }
 
         .brand-reading {
-            font-size: 14px;
-            letter-spacing: 0.4em;
-            margin-bottom: 15px;
-            color: rgba(255,255,255,0.9); /* 少し明るくして視認性アップ */
+            font-size: 0.75rem;
+            letter-spacing: 0.5em;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
         }
 
         .japanese-text {
-            font-size: clamp(16px, 2.5vw, 20px);
-            letter-spacing: 0.2em;
-            font-weight: 300;
-            line-height: 2.6;
-            color: #ffffff;
-        }
-
-        /* 導入・詳細誘導セクション */
-        .intro-section {
-            background: #0a0a0a;
-            padding: 140px 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-        }
-
-        .intro-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* 限定バッジの強調 */
-        .limit-badge {
-            display: inline-block;
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            padding: 15px 50px;
-            font-size: 24px;
-            letter-spacing: 0.4em;
-            margin-bottom: 50px;
-            font-weight: bold;
-            background: linear-gradient(45deg, rgba(212,175,55,0.1), rgba(0,0,0,0));
-            box-shadow: 0 0 20px rgba(212,175,55,0.2);
-        }
-
-        .intro-title {
-            font-size: 28px;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
             letter-spacing: 0.25em;
-            margin-bottom: 30px;
-            font-weight: normal;
-            color: #fff;
-        }
-
-        .intro-desc {
-            font-size: 16px;
-            color: #ccc;
-            margin-bottom: 50px;
             line-height: 2.2;
-            letter-spacing: 0.05em;
+            font-weight: 300;
         }
 
-        /* 詳細ページへのボタン */
-        .detail-button {
-            display: inline-block;
-            width: 100%;
-            max-width: 420px;
-            padding: 24px;
-            background: transparent;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 0.3em;
-            font-size: 15px;
-            transition: all 0.5s ease;
-        }
-
-        .detail-button:hover {
-            background: #d4af37;
-            color: #000;
-            box-shadow: 0 0 30px rgba(212,175,55,0.4);
-        }
-
-        /* フッター */
-        footer {
-            padding: 100px 20px;
+        /* --- Middle Section (限定30個・製品詳細への導線) --- */
+        .intro-section {
+            padding: 10rem 2rem;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 80%);
             text-align: center;
-            background: #000;
-            border-top: 1px solid #111;
         }
 
-        .footer-links { margin-bottom: 40px; }
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 12px;
-            transition: color 0.3s;
+        .limited-badge {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            padding: 0.8rem 2.5rem;
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 0.6em;
+            margin-bottom: 4rem;
         }
-        .footer-links a:hover { color: #d4af37; }
-        .copyright { font-size: 11px; color: #444; }
+
+        .cuvee-title {
+            font-size: clamp(1.6rem, 4vw, 2.6rem);
+            letter-spacing: 0.4em;
+            margin-bottom: 3.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .description {
+            max-width: 750px;
+            margin: 0 auto 5rem;
+            color: #ccc;
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+            line-height: 2.6;
+        }
+
+        .btn-detail {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 1.4rem 4.5rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.3em;
+            transition: all 0.4s;
+            background: transparent;
+        }
+
+        .btn-detail:hover {
+            background: var(--gold);
+            color: var(--black);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* --- Footer (Instagram & 各種リンク) --- */
+        footer {
+            padding: 8rem 2rem 4rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+        }
+
+        .instagram-icon-link {
+            display: inline-block;
+            margin-bottom: 4.5rem;
+            transition: opacity 0.3s;
+        }
+        .instagram-icon-link:hover { opacity: 0.7; }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-bottom: 5.5rem;
+        }
+
+        .footer-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            font-weight: 300;
+        }
+
+        .copyright {
+            font-size: 0.7rem;
+            color: #666;
+            letter-spacing: 0.25em;
+        }
 
         @media (max-width: 768px) {
-            .limit-badge { font-size: 18px; padding: 12px 30px; }
-            .hero { padding-top: 15vh; }
+            .footer-nav { flex-direction: column; gap: 2rem; }
+            .hero { height: 80vh; background-position: center; } /* スマホでも瓶が中心に来るよう調整 */
         }
     </style>
 </head>
@@ -263,37 +184,32 @@
     </header>
 
     <section class="intro-section">
-        <div class="intro-container">
-            <span class="limit-badge">限定 30 個</span>
-            <h2 class="intro-title">CUVÉE WAGYU NOIR</h2>
-            <p class="intro-desc">
-                選び抜かれたA5ランクの黒毛和牛と、天然の燕の巣。<br>
-                最高峰のレシピが織りなす、愛犬のための至高の体験を。<br>
-                5月1日の販売開始に先駆け、詳細をご案内いたします。
-            </p>
-            <a href="detail.html" class="detail-button">製品詳細を見る</a>
-        </div>
-    </section>
+        <div class="limited-badge">限定 30 個</div>
+        
+        <h2 class="cuvee-title">CUVÉE WAGYU NOIR</h2>
 
-    <footer style="padding: 100px 20px 60px; text-align: center; border-top: 1px solid #1a1a1a; background: #000;">
-        <div style="margin-bottom: 40px;">
-            <a href="https://www.instagram.com/maison_de_leclat" target="_blank" style="text-decoration: none; transition: 0.3s; display: inline-block;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-            </a>
-        </div>
-
-        <div class="footer-links" style="margin-bottom: 40px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-            <a href="legal.html" style="color: #888; text-decoration: none; font-size: 11px; letter-spacing: 0.1em; transition: 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='#888'">特定商取引法に基づく表記</a>
-            <a href="legal.html#privacy" style="color: #888; text-decoration: none; font-size: 11px; letter-spacing: 0.1em; transition: 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='#888'">プライバシーポリシー</a>
-        </div>
-
-        <p class="copyright" style="font-size: 10px; color: #444; letter-spacing: 0.2em; text-transform: uppercase;">
-            &copy; 2026 Maison de l'Éclat. All Rights Reserved.
+        <p class="description">
+            選び抜かれたA5ランクの黒毛和牛と、天然の燕の巣。<br>
+            最高峰のレシピが織りなす、愛犬のための至高の体験を。<br>
+            5月1日の販売開始に先駆け、詳細をご案内いたします。
         </p>
+
+        <a href="detail.html" class="btn-detail">製品詳細を見る</a>
+    </section>
+    
+    <footer>
+        <a href="#" class="instagram-icon-link">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--gold)">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+        </a>
+
+        <div class="footer-nav">
+            <a href="#">特定商取引法に基づく表記</a>
+            <a href="#">プライバシーポリシー</a>
+        </div>
+
+        <p class="copyright">© 2026 MAISON DE L’ÉCLAT. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
