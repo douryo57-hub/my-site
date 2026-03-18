@@ -30,8 +30,8 @@
             position: relative;
             height: 100vh;
             width: 100%;
-            /* 上段の文字が見にくい問題を解消するため、オーバーレイを強める (0.3 -> 0.5) */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-image (1).jpg') center/cover no-repeat;
+            /* 上段の文字が見にくい問題を解消するため、オーバーレイをさらに強める (0.5 -> 0.7) */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero-image (1).jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -44,18 +44,28 @@
             padding: 0 20px;
         }
 
-        /* ヒーローセクションの各テキストに影を追加して視認性を高める */
+        /* ヒーローセクションの各テキストに、よりリッチで、はっきりとした影を追加して視認性を高める */
         .title, .english-text, .brand-reading, .japanese-text {
-            text-shadow: 0 0 15px rgba(0,0,0,0.9);
+            text-shadow: 0 0 25px rgba(0,0,0,0.9);
         }
 
+        /* タイトル文字（英語）：より大きく、太く、存在感を持たせる */
         .title {
             color: var(--gold);
-            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 6.5vw, 4.5rem);
             letter-spacing: 0.35em;
-            font-weight: 500;
+            font-weight: 700; /* 太文字にする */
             text-transform: uppercase;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* カタカナサブコピー：英語タイトル並みに、劇的に大きく、太く、影を追加 */
+        .brand-reading {
+            color: var(--gold);
+            font-size: clamp(2.5rem, 6.5vw, 4.5rem); /* 英語タイトルと同じサイズにする */
+            letter-spacing: 0.35em;
+            font-weight: 700; /* 太文字にする */
+            margin-bottom: 3.5rem; /* 配置を整理するため、英文コピーの上に移動 */
         }
 
         .english-text {
@@ -67,19 +77,12 @@
             color: rgba(255,255,255,0.9);
         }
 
-        .brand-reading {
-            font-size: 0.75rem;
-            letter-spacing: 0.5em;
-            color: var(--gold);
-            margin-bottom: 0.8rem;
-        }
-
         .japanese-text {
-            /* 画像に負けないよう、文字サイズを少し大きくする */
-            font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+            /* 画像に負けないよう、文字サイズを少し大きくし、太文字にする */
+            font-size: clamp(1.2rem, 3.2vw, 1.7rem);
             letter-spacing: 0.25em;
             line-height: 2.2;
-            font-weight: 300;
+            font-weight: 500; /* 太文字にする */
         }
 
         /* --- Middle Section (限定30個・製品詳細への導線) --- */
@@ -117,9 +120,9 @@
             line-height: 2.6;
         }
 
-        /* 中段のハイライト用のクラスを作成 (A5ランク黒毛和牛、燕の巣) */
+        /* 中段のハイライト用のクラス (A5ランク黒毛和牛、燕の巣) */
         .highlight-ingredient {
-            color: var(--highlight-white); /* 色を金色から白にする */
+            color: var(--highlight-white); /* 色を白にする */
             font-size: 1.3rem; /* 他の文字より大きくする */
             font-weight: 700; /* 太文字にする */
             letter-spacing: 0.15em; /* 文字間を調整 */
@@ -189,11 +192,10 @@
     <header class="hero">
         <div class="hero-content">
             <h1 class="title">Maison de l'Éclat</h1>
-            <p class="english-text">
+            <p class="brand-reading">メゾンドレクラ</p> <p class="english-text">
                 The ultimate quality for your beloved dog. <br>
                 Infusing eternal love into this single jar.
             </p>
-            <p class="brand-reading">メゾンドレクラ</p>
             <p class="japanese-text">
                 愛犬のために贈る最高品質の素材。<br>
                 この一瓶に、永遠の愛を込めて。
@@ -211,7 +213,7 @@
             最高峰のレシピが織りなす、愛犬のための至高の体験を。<br>
             5月1日の販売開始に先駆け、詳細をご案内いたします。
         </p>
-
+        
         <a href="detail.html" class="btn-detail">製品詳細を見る</a>
     </section>
     
