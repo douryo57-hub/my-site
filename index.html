@@ -25,12 +25,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* --- Hero Section --- */
         .hero {
             position: relative;
             height: 100vh;
             width: 100%;
-            /* ファイル名を hero-image.jpg に修正 */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-image.jpg') center/cover no-repeat;
+            /* 画像名を hero-image (1).jpg に指定 */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero-image (1).jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -44,43 +45,44 @@
         }
 
         .title, .english-text, .brand-reading, .japanese-text {
-            text-shadow: 0 0 15px rgba(0,0,0,0.9);
+            text-shadow: 0 0 15px rgba(0,0,0,0.8);
         }
 
         .title {
             color: var(--gold);
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            letter-spacing: 0.35em;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            letter-spacing: 0.3em;
             font-weight: 500;
             text-transform: uppercase;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .english-text {
-            font-size: clamp(0.75rem, 2vw, 1.1rem);
+            font-size: clamp(0.7rem, 1.8vw, 1rem);
             letter-spacing: 0.15em;
-            margin-bottom: 3.5rem;
+            margin-bottom: 3rem;
             font-weight: 300;
             line-height: 1.6;
             color: rgba(255,255,255,0.9);
         }
 
         .brand-reading {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 0.5em;
             color: var(--gold);
             margin-bottom: 0.8rem;
         }
 
         .japanese-text {
-            font-size: clamp(1.1rem, 2.8vw, 1.5rem);
-            letter-spacing: 0.25em;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            letter-spacing: 0.2em;
             line-height: 2.2;
             font-weight: 300;
         }
 
+        /* --- Middle Section --- */
         .intro-section {
-            padding: 10rem 2rem;
+            padding: 8rem 2rem;
             background: radial-gradient(circle at center, var(--dark-gray) 0%, var(--black) 80%);
             text-align: center;
         }
@@ -88,92 +90,80 @@
         .limited-badge {
             display: inline-block;
             border: 1px solid var(--gold);
-            padding: 0.8rem 2.5rem;
+            padding: 0.6rem 2rem;
             color: var(--gold);
-            font-size: 1.2rem;
-            letter-spacing: 0.6em;
-            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.5em;
+            margin-bottom: 3.5rem;
         }
 
         .cuvee-title {
-            font-size: clamp(1.6rem, 4vw, 2.6rem);
+            font-size: clamp(1.4rem, 3.5vw, 2.2rem);
             letter-spacing: 0.4em;
-            margin-bottom: 3.5rem;
+            margin-bottom: 3rem;
             font-weight: 500;
-            text-transform: uppercase;
         }
 
         .description {
-            max-width: 750px;
-            margin: 0 auto 5rem;
+            max-width: 700px;
+            margin: 0 auto 4rem;
             color: var(--copy-gray);
-            font-size: 1rem;
-            letter-spacing: 0.12em;
-            line-height: 2.6;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            line-height: 2.4;
         }
 
         .highlight-ingredient {
             color: var(--highlight-white);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            letter-spacing: 0.15em;
         }
 
         .btn-detail {
             display: inline-block;
             border: 1px solid var(--gold);
             color: var(--gold);
-            padding: 1.4rem 4.5rem;
+            padding: 1.2rem 4rem;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 0.3em;
             transition: all 0.4s;
-            background: transparent;
         }
 
         .btn-detail:hover {
             background: var(--gold);
             color: var(--black);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
         }
 
         footer {
-            padding: 8rem 2rem 4rem;
+            padding: 6rem 2rem 3rem;
             border-top: 1px solid rgba(212, 175, 55, 0.1);
             text-align: center;
         }
 
-        .instagram-icon-link {
-            display: inline-block;
-            margin-bottom: 4.5rem;
-            transition: opacity 0.3s;
-        }
-        .instagram-icon-link:hover { opacity: 0.7; }
-
         .footer-nav {
             display: flex;
             justify-content: center;
-            gap: 4rem;
-            margin-bottom: 5.5rem;
+            gap: 3rem;
+            margin-bottom: 4rem;
         }
 
         .footer-nav a {
             color: var(--white);
             text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
+            font-size: 0.8rem;
             font-weight: 300;
         }
 
         .copyright {
             font-size: 0.7rem;
-            color: #666;
-            letter-spacing: 0.25em;
+            color: #555;
+            letter-spacing: 0.2em;
         }
 
         @media (max-width: 768px) {
-            .footer-nav { flex-direction: column; gap: 2rem; }
-            .hero { height: 80vh; background-position: center; }
+            .footer-nav { flex-direction: column; gap: 1.5rem; }
+            .hero { height: 75vh; }
         }
     </style>
 </head>
@@ -206,16 +196,11 @@
     </section>
     
     <footer>
-        <a href="#" class="instagram-icon-link">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--gold)">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21=1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-        </a>
         <div class="footer-nav">
             <a href="#">特定商取引法に基づく表記</a>
             <a href="#">プライバシーポリシー</a>
         </div>
-        <p class="copyright">© 2026 MAISON DE L’Éclat. ALL RIGHTS RESERVED.</p>
+        <p class="copyright">© 2026 MAISON DE L’ÉCLAT. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
